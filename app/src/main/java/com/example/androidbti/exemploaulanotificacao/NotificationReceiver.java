@@ -1,5 +1,6 @@
 package com.example.androidbti.exemploaulanotificacao;
 
+import android.app.NotificationManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -27,5 +28,7 @@ public class NotificationReceiver extends BroadcastReceiver {
                break;
        }
         Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
+        NotificationManager nm = (NotificationManager) context.getSystemService(Context.NOTIFICATION_SERVICE);
+        nm.cancel(50);
     }
 }
